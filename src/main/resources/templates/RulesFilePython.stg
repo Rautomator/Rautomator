@@ -1,0 +1,7 @@
+HWPython(name) ::= <<
+print("Hello <name>")
+>>
+
+HW2Python(name) ::=<<
+print("Hola <name>")
+>>

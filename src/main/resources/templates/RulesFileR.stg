@@ -1,0 +1,7 @@
+HWR(name) ::= <<
+print("Hello <name>")
+>>
+
+HW2R(name) ::=<<
+print("Hola <name>")
+>>
