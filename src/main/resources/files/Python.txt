@@ -1,0 +1,6 @@
+PRUEBA PYTHON
+=======================
+Primera regla
+print("Hello world")
+Segunda regla
+print("Hola mundo")
