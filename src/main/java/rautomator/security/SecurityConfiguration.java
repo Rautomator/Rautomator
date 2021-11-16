@@ -13,8 +13,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable().addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
-				.authorizeRequests().antMatchers(HttpMethod.POST, "/users/login").permitAll().anyRequest()
-				.authenticated();
+		http.authorizeRequests().antMatchers("/resources/**", "/webjars/**", "/h2-console/**").permitAll()
+				.antMatchers(HttpMethod.GET, "/", "/oups").permitAll().antMatchers(HttpMethod.POST, "/users/login")
+				.permitAll().anyRequest().authenticated();
+
+		http.csrf().ignoringAntMatchers("/h2-console/**", "/**");
+		http.headers().frameOptions().sameOrigin();
+		// Filtro JWT
+		http.addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
 	}
 }
