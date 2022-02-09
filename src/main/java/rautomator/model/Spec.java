@@ -16,9 +16,14 @@ public class Spec {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "analysis_id", referencedColumnName = "id")
 	private AnalysisSpec analysis;
+	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "data_id", referencedColumnName = "id")
 	private DataSpec data;
+
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "url_id", referencedColumnName = "id")
+	private DataSourceSpec url;
 
 	public Long getId() {
 		return id;
@@ -43,5 +48,14 @@ public class Spec {
 	public void setData(DataSpec data) {
 		this.data = data;
 	}
+	
+	public DataSourceSpec getDataSourceSpec() {
+		return this.url;
+	}
+
+	public void setDataSourceSpec(DataSourceSpec url) {
+		this.url = url;
+	}
+
 
 }
