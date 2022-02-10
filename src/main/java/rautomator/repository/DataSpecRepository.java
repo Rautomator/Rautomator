@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import rautomator.model.DataSpec;
 
-public interface DataSpecRepository extends CrudRepository<DataSpec, Integer> {
+public interface DataSpecRepository extends CrudRepository<DataSpec, Long> {
 	Collection<DataSpec> findAll();
 
 }

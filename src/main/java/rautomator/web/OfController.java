@@ -47,7 +47,7 @@ public class OfController {
 	}
 
 	@RequestMapping(value = "/{id_data}", method = RequestMethod.POST, produces = "application/json")
-	ResponseEntity<Of> newOf(@RequestBody Of newOf, @PathVariable("id_data") Integer id_data) {
+	ResponseEntity<Of> newOf(@RequestBody Of newOf, @PathVariable("id_data") Long id_data) {
 		DataSpec dataSpec = dataRepository.findById(id_data).get();
 		newOf.setDataSpec(dataSpec);
 		dataSpec.addOf(newOf);

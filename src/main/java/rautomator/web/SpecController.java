@@ -21,7 +21,7 @@ public class SpecController {
 
 	@GetMapping("/spec")
 	List<Spec> all() {
-		return repository.findAll();
+		return (List<Spec>) repository.findAll();
 	}
 
 //	@PostMapping("/spec")
